@@ -15,9 +15,9 @@ SERVER
 
 DESCRIPTION
 Pollbox is the heart of the library. You start it and it registers under poll_manager atom and
-routes data revieved from modules that want to do a push notifications to the notification sending 
-PID that is looked up by its poll descriptor. So basically the process of work with push 
-notifications looks something like that:
+routes data received from modules that want to do a push notifications to the notification sender 
+process loop whose PID is looked up by its poll descriptor. So basically the process of work with 
+push notifications looks something like that:
 
 
 ```
