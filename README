@@ -25,7 +25,7 @@ notifications looks something like that:
        |_(Desc)__-> Logic module
 Client |                        `--> Pollbox -.
        |<-______                (getting PID from Descriptor)
-                \_               ___)________/
+                \_               ____________/
                   ` Http_push <-/
 
 ```
