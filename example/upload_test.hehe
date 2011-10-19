@@ -1,0 +1,20 @@
+<??
+	html_pid() -> string:sub_string(pid_to_list(self()), 2, string:len(pid_to_list(self())) - 1).
+??>
+ROFL MAO
+<form action="/upload" method="POST" enctype="multipart/form-data" id="FileUploader">
+	<input type="file" name="test<?=html_pid()?>" id="FileTrigger" /> <div id="UploadProgress"></div><br />
+</form>
+<script>
+	$(function() {
+		RegisterFileUploader($('#FileTrigger'));
+		$('#FileTrigger').bind('newChunk', function() {
+			console.log ('TRIGGERED ' + $('#FileTrigger').attr('data-progress'));
+			$('#UploadProgress').text(
+				parseFloat(
+					$('#FileTrigger').attr('data-progress')
+				).toFixed(2) + '%'
+			)
+		});
+	});
+</script>

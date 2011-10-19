@@ -1,0 +1,37 @@
+CLIENT
+
+DESCRIPTION
+The thing is not even a library to do push notifications over http.
+On the client side it initializes connection with server that terminates after the data is received
+afterwards the connection is re-established. There is a way to stop the connection. 
+My implementation of the client-side Poll function relies on jQuery. If you don't want to use 
+jQuery, you will have to rewrite it (it's rather small anyways).
+
+To utilize the Poll() function I use a handler function and event-rising. I'll link the longpoll 
+file uploader I have wrote rather soon.
+
+
+SERVER
+
+DESCRIPTION
+Pollbox is the heart of the library. You start it and it registers under poll_manager atom and
+routes data received from modules that want to do a push notifications to the notification sender 
+process loop whose PID is looked up by its poll descriptor. So basically the process of work with 
+push notifications looks something like that:
+
+
+```
+
+       |-(Desc)---> Logic module
+Client |                        `--> Pollbox -.
+       |<-______                (getting PID from Descriptor)
+                \_               ____________/
+                  ` Http_push <-/
+
+```
+
+The http_push relies on YAWS. You may rewrite it using whatever http server you like though.
+For more details, read the example code that'll commit rather soon.
+
+LICENSE
+MIT. Do whatever.

@@ -1,0 +1,36 @@
+<??
+                                                                                                                                         
+keyfind(Key, List) ->
+    {Key, Value} = .lists:keyfind(Key, 1, List),
+    Value.
+
+keyfind(Key, List, Default) ->
+    case lists:keyfind(Key, 1, List) of
+        {Key, Value} ->
+            Value;
+        _ ->
+            Default
+    end.
+
+
+??><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+
+	<head>
+		<link href="/files/css/index.css" rel="stylesheet">
+
+		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.6.0/jquery.min.js"></script>
+		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.12/jquery-ui.min.js"></script>
+		<script type="text/javascript" src="/js/functions.js"></script>
+		<script type="text/javascript" src="/js/jquery.form.js"></script>
+		<script type="text/javascript" src="/js/json.js"></script>
+
+		<title>erlongpoll - file upload demo</title>
+	</head>
+
+	<body>
+		<div id="content">
+			<?= keyfind(content, Arg) ?>
+		</div>
+	</body>
+</html>
