@@ -51,7 +51,7 @@ loop (WorkPID, Descriptor) ->
 		loop(WorkPID, Descriptor)
 	after 10000 ->
 		io:format ("LONG_POLL @ ~p: testing connection~n", [self()]),
-		case deliver_chunk(WorkPID, "\n") of
+		case deliver_chunk(WorkPID, "\n", blocking) of
 			ok -> 
 				loop (WorkPID, Descriptor);
 			{error, _} -> 
