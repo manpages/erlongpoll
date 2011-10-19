@@ -22,7 +22,7 @@ push notifications looks something like that:
 
 ```
 
-       |_(Desc)__-> Logic module
+       |-(Desc)---> Logic module
 Client |                        `--> Pollbox -.
        |<-______                (getting PID from Descriptor)
                 \_               ____________/
