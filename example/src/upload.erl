@@ -118,10 +118,10 @@ basename(FilePath) ->
 	end.
 
 new_chunk(X) -> 
-	poll_manager ! {{poll, get(poll_id), user, get(uid)}, {data, float_to_list(X)}}
+	poll_manager ! {{poll, get(poll_id), session, get(uid)}, {data, float_to_list(X)}}
 .
 
 last_chunk() -> 
 	io:format ("UPLOADER: last_chunk ~p~n", [get(poll_id)]),
-	poll_manager ! {{poll, get(poll_id), user, get(uid)}, stop}
+	poll_manager ! {{poll, get(poll_id), session, get(uid)}, stop}
 .

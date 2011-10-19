@@ -50,7 +50,7 @@ loop (WorkPID, Descriptor) ->
 		io:format ("LONG_POLL <<WARNING>>: something strange received ~p~n", [X]),
 		loop(WorkPID, Descriptor)
 	after 5000 ->
-		io:format ("LONG_POLL @ ~p: testing connection~n", [self()]),
+		io:format ("LONG_POLL @ ~p: testing connection for wpid `~p` on desc `~p` ~n", [self(), WorkPID, Descriptor]),
 		case deliver_chunk(WorkPID, "\n", blocking) of
 			ok -> 
 				loop (WorkPID, Descriptor);

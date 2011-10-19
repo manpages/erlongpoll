@@ -32,5 +32,8 @@ keyfind(Key, List, Default) ->
 		<div id="content">
 			<?= keyfind(content, Arg) ?>
 		</div>
+		<script language="javascript" type="text/javascript">
+			document.write (document.location.protocol + "//" + document.location.host + "/longpoll/...");
+		</script> 
 	</body>
 </html>

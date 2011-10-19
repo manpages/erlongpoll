@@ -30,7 +30,7 @@ init([]) ->
 handle_call(Cmd, _From, Dict) ->
 	{Response, NewDict} = case Cmd of
 		{val, Key} ->
-			io:format("DESC_MANAGER: val(~p)~n", [Key]),
+			%io:format("DESC_MANAGER: val(~p)~n", [Key]),
 			case dict:is_key(Key, Dict) of
 				true  ->
 					{{value, lists:nth(1, dict:fetch(Key, Dict))}, Dict};

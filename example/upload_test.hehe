@@ -7,6 +7,8 @@ ROFL MAO
 </form>
 <script>
 	$(function() {
+		$('#FileUploader').attr("action", document.location.protocol + "//" + document.location.host + "/upload");
+		console.log("there i fixed it: " + $('#FileUploader').attr("action"));
 		RegisterFileUploader($('#FileTrigger'));
 		$('#FileTrigger').bind('newChunk', function() {
 			console.log ('TRIGGERED ' + $('#FileTrigger').attr('data-progress'));
