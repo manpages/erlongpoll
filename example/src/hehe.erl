@@ -18,7 +18,7 @@ run(File, Arg) ->
 	random:seed(erlang:now()),
 	Modname = list_to_binary("hehe_mod_" ++ re:replace(File, "[/\\:.?\s]", "_", [global])),
 	
-	TFN = "/tmp/hehe/" ++ binary_to_list(Modname) ++ ".erl",
+	TFN = "erlongpoll/example/tmp/" ++ binary_to_list(Modname) ++ ".erl",
 	
 	{IHdr, RSrc} = get_header(Src),
 	

@@ -17,12 +17,14 @@ wget http://memoricide.very.lv/yaws.conf
 mkdir logs
 
 touch Emakefile
-echo "{\"example/src/*\", [{outdir, \"example/ebin\"}]}." >> Emakefile
+echo "{\"erlongpoll/example/src/*\", [{outdir, \"erlongpoll/example/ebin\"}]}." >> Emakefile
 
 touch erl.sh
 echo "erl -name push_example@myhost -pa yaws/ebin/ erlongpoll/example/ebin" > erl.sh
 chmod 775 ./erl.sh
 
+mkdir erlongpoll/example/ebin
+mkdir erlongpoll/example/tmp/hehe
 echo ""
 echo "I'm tired. do 'chgrp -R <group> .' and 'chown -R <user> .' yourself"
 echo "And you might like to edit ./yaws.conf and ./erl.sh"
